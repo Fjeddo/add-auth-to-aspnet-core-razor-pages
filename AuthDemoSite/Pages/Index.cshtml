@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@if(User.Identity?.IsAuthenticated ?? false)
+{
+    <h2>Welcome, @User.Identity?.Name!</h2>
+    <p>You are logged in.</p>
+    <form method="post" asp-page-handler="Logout">
+        <button type="submit" class="btn btn-danger">Logout</button>
+    </form>
+
+    <ul>
+        @foreach (var modelClaim in User.Claims)
+        {
+            <li>@modelClaim</li>
+        }
+    </ul>
+}
+else
+{
+    <p>You are not logged in, try access one of the links in the top menu.</p>
+}

@@ -1,0 +1,16 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Role missing";
+}
+
+<h1 class="text-danger">Unauthorized access.</h1>
+<h2 class="text-danger">You don't have the required role.</h2>
+
+<h3>Info</h3>
+<p>
+    Referring page: @Request.Headers["Referer"]
+</p>
+<p>
+    <a asp-area="" asp-page="/Index">Home</a>
+</p>
