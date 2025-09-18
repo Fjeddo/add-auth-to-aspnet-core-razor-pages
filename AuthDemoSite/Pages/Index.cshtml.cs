@@ -10,7 +10,7 @@ public class IndexModel : PageModel
     {
     }
 
-    public SignOutResult OnPostLogout()
+    public SignOutResult OnGetLogout()
     {
         return SignOut(new AuthenticationProperties {RedirectUri = "/"});
     }
