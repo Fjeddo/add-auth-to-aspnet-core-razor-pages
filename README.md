@@ -2,6 +2,10 @@
 In this step-by-step tutorial we will add authentication and authorization to a newly created ASP.NET Core Razor Pages web application. 
 The users will be authenticated using **Microsoft Entra ID Free**.
 
+## Pre-reqs
+A **Micorsoft Entra ID Free** is used in this demo and there is an **app registration** setup. There are user accounts in the Entra ID and **two app roles** are configured on the app registration, `User.Pawn` and `User.Bishop` (chess references).
+
+## How-to
 1. Create a new ASP.NET Core Razor Pages web application:
 
     `dotnet new razor -o [projectname]`
@@ -86,7 +90,7 @@ The users will be authenticated using **Microsoft Entra ID Free**.
     ...
     ```
 
-4. Add pages `Pawns` and `Bishops` (chess references). Please and note the required policies in the respective page model. This will cause the user to be redirected to login with a valid Entra ID account.
+4. Add pages `Pawns` and `Bishops`. Please and note the required policies in the respective page model. This will cause the user to be redirected to login with a valid Entra ID account.
 
 5. If logged in with a user without the required role(s), the `/NoMatchingRole` is served and the user may navigate to the `Index` page:
 
